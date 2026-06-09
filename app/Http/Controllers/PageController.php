@@ -32,4 +32,17 @@ class pageController extends Controller {
     return view('pages.faq', compact('faqs'));
     }
 
+    public function submitRequest(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|numeric|digits:11',
+            'amount' => 'required|numeric|min:1000000',
+        ], [
+            'phone.digits' => 'شماره تماس باید ۱۱ رقم باشد.',
+            'amount.min' => 'حداقل مبلغ درخواستی یک میلیون تومان است.'
+        ]);
+
+        return redirect()->back()->with('success', 'درخواست شما ثبت شد. در اسرع وقت کارشناسان ما با شما تماس می‌گیرند.');
+    }
 }

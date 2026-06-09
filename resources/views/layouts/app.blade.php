@@ -27,7 +27,7 @@
 
     <header class="bg-primary text-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-accent">پی‌مان</div>
+            <a href="{{ route('home') }}"><div class="text-2xl font-bold text-accent">پی‌مان</div></a>
             <nav class="space-x-6 space-x-reverse">
                 <a href="{{ route('home') }}" class="hover:text-accent transition">خانه</a>
                 <a href="{{ route('about') }}" class="hover:text-accent transition">درباره ما</a>
