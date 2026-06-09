@@ -12,7 +12,7 @@
         <h2 class="text-3xl font-bold text-center text-textBlue mb-10">چرا پی‌مان</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-cardBg p-6 rounded-xl border border-cardBorder text-center">
-                <div class="w-16 h-16 mx-auto bg-gray-800 text-textBlue rounded-full flex items-center justify-center text-2xl font-bold mb-4">۱</div>
+                <div class="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">۱</div>
                 <h3 class="text-xl font-bold text-gray-200 mb-2">بدون سود و کارمزد</h3>
                 <p class="text-gray-400 text-sm">قیمت کالا را بدون هیچ هزینه اضافی پرداخت کنید.</p>
             </div>
@@ -22,7 +22,7 @@
                 <p class="text-gray-400 text-sm">فرآیند اعتبارسنجی شما کاملاً آنلاین انجام می‌شود.</p>
             </div>
             <div class="bg-cardBg p-6 rounded-xl border border-cardBorder text-center">
-                <div class="w-16 h-16 mx-auto bg-gray-800 text-textBlue rounded-full flex items-center justify-center text-2xl font-bold mb-4">۳</div>
+                <div class="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">۳</div>
                 <h3 class="text-xl font-bold text-gray-200 mb-2">بدون نیاز به ضامن</h3>
                 <p class="text-gray-400 text-sm">نیازی به معرفی ضامن یا ارائه چک و سفته نیست.</p>
             </div>
