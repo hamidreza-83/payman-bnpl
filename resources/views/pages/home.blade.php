@@ -5,7 +5,7 @@
         <h1 class="text-5xl font-bold text-textBlue mb-6">امروز بخر، در ۴ قسط پرداخت کن!</h1>
         <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">با «پی‌مان» بدون نیاز به ضامن و چک، خریدهای خود را امروز انجام دهید و هزینه آن را در ۴ ماه آینده با خیال راحت بپردازید.</p>
         
-        <button onclick="openModal()" class="bg-accent hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full transition shadow-lg shadow-teal-500/20">درخواست اعتبار</button>
+        <button onclick="openModal()" class="bg-accent hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full transition shadow-lg shadow-teal-500/20 request-credit">درخواست اعتبار</button>
     </div>
 
     <div class="mb-16 relative z-10">
@@ -13,17 +13,17 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-cardBg p-6 rounded-xl border border-cardBorder text-center">
                 <div class="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">۱</div>
-                <h3 class="text-xl font-bold text-gray-200 mb-2">بدون سود و کارمزد</h3>
+                <h3 class="text-xl font-bold text-gray-500 mb-2">بدون سود و کارمزد</h3>
                 <p class="text-gray-400 text-sm">قیمت کالا را بدون هیچ هزینه اضافی پرداخت کنید.</p>
             </div>
             <div class="bg-cardBg p-6 rounded-xl border border-cardBorder text-center">
                 <div class="w-16 h-16 mx-auto bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">۲</div>
-                <h3 class="text-xl font-bold text-gray-200 mb-2">تایید اعتبار فوری</h3>
+                <h3 class="text-xl font-bold text-gray-500 mb-2">تایید اعتبار فوری</h3>
                 <p class="text-gray-400 text-sm">فرآیند اعتبارسنجی شما کاملاً آنلاین انجام می‌شود.</p>
             </div>
             <div class="bg-cardBg p-6 rounded-xl border border-cardBorder text-center">
                 <div class="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">۳</div>
-                <h3 class="text-xl font-bold text-gray-200 mb-2">بدون نیاز به ضامن</h3>
+                <h3 class="text-xl font-bold text-gray-500 mb-2">بدون نیاز به ضامن</h3>
                 <p class="text-gray-400 text-sm">نیازی به معرفی ضامن یا ارائه چک و سفته نیست.</p>
             </div>
         </div>

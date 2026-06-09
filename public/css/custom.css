@@ -1,0 +1,18 @@
+.faq-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.faq-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.request-credit {
+    transition: transform 0.3s ease;
+}
+
+.request-credit:hover {
+    transform: scale(1.1);
+}

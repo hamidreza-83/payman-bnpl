@@ -5,7 +5,7 @@
     
     <div class="max-w-3xl mx-auto space-y-4">
         @foreach($faqs as $faq)
-            <div class="bg-white p-6 rounded-xl shadow-sm border-r-4 border-accent">
+            <div class="bg-white p-6 rounded-xl shadow-sm border-r-4 border-accent faq-card">
                 <h3 class="text-lg font-bold text-gray-800 mb-2">{{ $faq['q'] }}</h3>
                 <p class="text-gray-600">{{ $faq['a'] }}</p>
             </div>
