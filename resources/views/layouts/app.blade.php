@@ -27,7 +27,9 @@
 <body class="bg-light text-gray-800 flex flex-col min-h-screen">
 
     <header class="bg-primary text-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        
+        <div class="flex items-center space-x-8 space-x-reverse">
             <a href="{{ route('home') }}"><div class="text-2xl font-bold text-accent">پی‌مان</div></a>
             <nav class="space-x-6 space-x-reverse">
                 <a href="{{ route('home') }}" class="hover:text-accent transition">خانه</a>
@@ -35,7 +37,15 @@
                 <a href="{{ route('faq') }}" class="hover:text-accent transition">سوالات متداول</a>
             </nav>
         </div>
-    </header>
+
+        <div>
+            <button type="button" class="border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold py-2 px-6 rounded-full transition-all duration-300">
+                ورود
+            </button>
+        </div>
+
+    </div>
+</header>
 
     <main class="flex-grow container mx-auto px-6 py-8">
         @yield('content')
