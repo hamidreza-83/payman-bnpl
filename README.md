@@ -13,6 +13,7 @@
 برای اجرای این پروژه روی سیستم خود (محیط لینوکس)مراحل زیر را دنبال کنید:
 
 1. **کلون کردن مخزن:**
+  1. **کلون کردن مخزن:**
    ```bash
    git clone https://github.com/your-username/payman-bnpl.git
    cd payman-bnpl
@@ -21,7 +22,7 @@
 2. **نصب وابستگی‌های بک‌اند:**
    ```bash
    composer install
-   ```  
+   ```
 3. **اجرای سرور توسعه:**
 4.```bash
    php artisan serve
