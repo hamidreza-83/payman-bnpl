@@ -22,6 +22,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
         body { font-family: 'Vazirmatn', sans-serif; }
     </style>
+    <link rel="icon" type="image/png" href="{{ asset('icon.png') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 <body class="bg-light text-gray-800 flex flex-col min-h-screen">
