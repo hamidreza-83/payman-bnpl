@@ -16,3 +16,17 @@
 .request-credit:hover {
     transform: scale(1.1);
 }
+
+.contact-box {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contact-box:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(13, 148, 136, 0.15);
+    border-color: rgba(13, 148, 136, 0.3);
+}

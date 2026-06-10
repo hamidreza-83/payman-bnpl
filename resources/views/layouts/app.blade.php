@@ -35,6 +35,7 @@
                 <a href="{{ route('home') }}" class="hover:text-accent transition">خانه</a>
                 <a href="{{ route('about') }}" class="hover:text-accent transition">درباره ما</a>
                 <a href="{{ route('faq') }}" class="hover:text-accent transition">سوالات متداول</a>
+                <a href="{{ route('contact') }}" class="hover:text-accent transition">تماس با ما</a>
             </nav>
         </div>
 
