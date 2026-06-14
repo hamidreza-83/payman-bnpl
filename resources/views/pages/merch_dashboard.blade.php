@@ -51,20 +51,30 @@
                         </tr>
                     </thead>
                     <tbody class="text-gray-600 text-sm divide-y divide-gray-100">
-                        @foreach($transactions as $tx)
-                            <tr class="hover:bg-gray-55 transition">
-                                <td class="p-4 font-mono text-gray-900">{{ $tx['id'] }}</td>
-                                <td class="p-4 font-bold">{{ $tx['user'] }}</td>
-                                <td class="p-4 text-primary font-medium">{{ $tx['amount'] }}</td>
-                                <td class="p-4">
-                                    <span class="px-2.5 py-1 rounded-full text-xs font-semibold {{ $tx['status'] == 'موفق' ? 'bg-green-50 text-green-700' : 'bg-yellow-50 text-yellow-700' }}">
-                                        {{ $tx['status'] }}
-                                    </span>
-                                </td>
-                                <td class="p-4">{{ $tx['date'] }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
+                    @forelse($transactions as $tx)
+                        <tr class="hover:bg-gray-55 transition">
+                            <td class="p-4 font-mono text-gray-900">{{ $tx['id'] }}</td>
+                            <td class="p-4 font-bold">{{ $tx['user'] }}</td>
+                            <td class="p-4 text-primary font-medium">{{ $tx['amount'] }}</td>
+                            <td class="p-4">
+                                <span class="px-2.5 py-1 rounded-full text-xs font-semibold {{ $tx['status'] == 'موفق' ? 'bg-green-50 text-green-700' : 'bg-yellow-50 text-yellow-700' }}">
+                                    {{ $tx['status'] }}
+                                </span>
+                            </td>
+                            <td class="p-4">{{ $tx['date'] }}</td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="5" class="p-8 text-center text-gray-400">
+                                <div class="flex flex-col items-center justify-center space-y-2">
+                                    <span class="text-3xl">📊</span>
+                                    <p class="font-medium">هنوز هیچ تراکنشی برای این درگاه ثبت نشده است.</p>
+                                    <p class="text-xs text-gray-400">به محض اولین خرید مشتریان، اطلاعات در این بخش نمایش داده می‌شود.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforelse
+                </tbody>
                 </table>
             </div>
         </div>

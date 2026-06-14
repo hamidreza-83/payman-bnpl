@@ -93,35 +93,40 @@ class pageController extends Controller {
     return redirect()->route('merchant.dashboard')->with('success', 'ثبت‌نام شما با موفقیت انجام شد و پنل تجاری فعال گردید.');
     }
     public function showDashboard() {
-    $transactions = [
-        [
-            'id' => 'TXN-1042',
-            'user' => 'امیرحسین رضایی',
-            'amount' => '۱,۲۵۰,۰۰۰ تومان',
-            'status' => 'موفق',
-            'date' => '۱۴۰۵/۰۳/۲۴'
-        ],
-        [
-            'id' => 'TXN-1041',
-            'user' => 'سارا احمدی',
-            'amount' => '۴۲۰,۰۰۰ تومان',
-            'status' => 'موفق',
-            'date' => '۱۴۰۵/۰۳/۲۴'
-        ],
-        [
-            'id' => 'TXN-1040',
-            'user' => 'محمد کریمی',
-            'amount' => '۳,۸۰۰,۰۰۰ تومان',
-            'status' => 'در انتظار تسویه',
-            'date' => '۱۴۰۵/۰۳/۲۳'
-        ]
-    ];
+    $user = auth()->user();
+
+    $transactions = []; 
+
+    if ($user && $user->email === 'jafar@gmail.com') {
+        $transactions = [
+            [
+                'id' => 'TXN-1042',
+                'user' => 'امیرحسین رضایی',
+                'amount' => '۱,۲۵۰,۰۰۰ تومان',
+                'status' => 'موفق',
+                'date' => '۱۴۰۵/۰۳/۲۴'
+            ],
+            [
+                'id' => 'TXN-1041',
+                'user' => 'سارا احمدی',
+                'amount' => '۴۲۰,۰۰۰ تومان',
+                'status' => 'موفق',
+                'date' => '۱۴۰۵/۰۳/۲۴'
+            ],
+            [
+                'id' => 'TXN-1040',
+                'user' => 'محمد کریمی',
+                'amount' => '۳,۸۰۰,۰۰۰ تومان',
+                'status' => 'در انتظار تسویه',
+                'date' => '۱۴۰۵/۰۳/۲۳'
+            ]
+        ];
+    } 
 
     return view('pages.merch_dashboard', compact('transactions')); 
     }
 
-    public function processLogin(Request $request)
-{
+    public function processLogin(Request $request){
     $credentials = $request->validate([
         'email' => ['required', 'email'],
         'password' => ['required'],
