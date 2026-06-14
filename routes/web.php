@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 /* GET */
 
 Route::get('/', [PageController::class, 'home']) -> name('home');
@@ -49,3 +50,10 @@ Route::get('/merchant/dashboard', [PageController::class, 'showDashboard'])
     
     return redirect('/'); 
 })->name('logout');
+
+// login
+
+// روت نمایش صفحه ورود
+Route::get('/merchant/login', function() {
+    return view('pages.merchant_login');
+})->name('merchant.login');

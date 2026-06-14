@@ -51,20 +51,20 @@
 
         <div>
             @auth
-            <div class="flex items-center space-x-4 space-x-reverse">
-            <a href="{{ route('merchant.dashboard') }}" class="bg-accent text-white font-bold py-2 px-6 rounded-full transition-all text-sm">
-                پنل مدیریت ({{ Auth::user()->name }})
-            </a>
-            <a href="/merchant/logout" class="text-xs text-red-400 hover:text-red-500 font-medium transition">
-                خروج از حساب
-            </a>
-            </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <a href="/merchant/dashboard" class="bg-accent text-white font-bold py-2 px-6 rounded-full transition-all text-sm">
+                        پنل مدیریت ({{ Auth::user()->name }})
+                    </a>
+                    <a href="/merchant/logout" class="text-xs text-red-400 hover:text-red-500 font-medium transition">
+                        خروج از حساب
+                    </a>
+                </div>
             @else
-            <a href="{{ route('merchant.signup') }}" class="border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold py-2 px-6 rounded-full transition-all duration-300">
-            ورود / ثبت‌نام پذیرندگان
-            </a>
+                <a href="/merchant/login" class="border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold py-2 px-6 rounded-full transition-all duration-300">
+                    ورود
+                </a>
             @endauth
-        </div>
+        </div>  
 
     </div>
 </header>
