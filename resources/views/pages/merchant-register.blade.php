@@ -151,17 +151,17 @@
             <span :class="step == 4 ? 'text-primary font-bold border-b-2 border-primary pb-1' : ''">۴. اطلاعات مالک</span>
         </div>
 
-        <form action="{{ route('business.landing') }}" method="GET" novalidate @submit="onFormSubmit($event)">
+        <form action="{{ route('merchant.store') }}" method="POST" novalidate @submit="onFormSubmit($event)">
             
             <div x-show="step === 1">
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">آدرس ایمیل کاری:</label>
-                    <input type="email" x-model="email" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary" placeholder="name@company.com">
+                    <input type="email" name="email" x-model="email" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary" placeholder="name@company.com">
                     <p x-show="errors.email" x-text="errors.email" class="text-red-500 text-xs mt-1"></p>
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2">آدرس وبسایت فروشگاه:</label>
-                    <input type="text" x-model="website" id="merchant_website" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary text-left" dir="ltr" placeholder="digikala.com">
+                    <input type="text" name="website" x-model="website" id="merchant_website" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary text-left" dir="ltr" placeholder="digikala.com">
                     <p x-show="errors.website" x-text="errors.website" class="text-red-500 text-xs mt-1"></p>
                 </div>
                 <button type="button" @click="nextStep()" class="w-full bg-primary text-white py-2.5 rounded-lg font-bold hover:bg-opacity-90 transition">مرحله بعدی</button>
@@ -191,12 +191,12 @@
             <div x-show="step === 3" x-cloak>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">نام تجاری / نام فروشگاه:</label>
-                    <input type="text" x-model="storeName" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary" placeholder="مثلا: پوشاک تن‌پوش">
+                    <input type="text" name="biz_name" x-model="storeName" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary" placeholder="مثلا: پوشاک تن‌پوش">
                     <p x-show="errors.storeName" x-text="errors.storeName" class="text-red-500 text-xs mt-1"></p>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">حوزه فعالیت:</label>
-                    <select x-model="activity" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary">
+                    <select x-model="activity" name="biz_type" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary">
                         <option value="">انتخاب کنید...</option>
                         <option value="clothing">پوشاک و لباس</option>
                         <option value="electronics">دیجیتال و الکترونیک</option>
@@ -205,8 +205,8 @@
                     <p x-show="errors.activity" x-text="errors.activity" class="text-red-500 text-xs mt-1"></p>
                 </div>
                 <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">میانگین فروش ماهیانه شما:</label>
-                    <select x-model="monthlySales" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">میانگین فروش ماهیانه :</label>
+                    <select name="biz_sales" x-model="monthlySales" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary">
                         <option value="">انتخاب کنید...</option>
                         <option value="under_50">کمتر از ۵۰ میلیون تومان</option>
                         <option value="50_200">بین ۵۰ تا ۲۰۰ میلیون تومان</option>
@@ -224,15 +224,18 @@
             <div x-show="step === 4" x-cloak>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">نام و نام خانوادگی مالک کسب‌وکار:</label>
-                    <input type="text" x-model="ownerName" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary">
+                    <input name="name" type="text" x-model="ownerName" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary">
                     <p x-show="errors.ownerName" x-text="errors.ownerName" class="text-red-500 text-xs mt-1"></p>
                 </div>
                 <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">شماره موبایل مالک (جهت تماس رسمی):</label>
-                    <input type="text" x-model="ownerMobile" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary text-left" dir="ltr" placeholder="09151234567">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">شماره موبایل:</label>
+                    <input name="owner_phone" type="text" x-model="ownerMobile" class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary text-left" dir="ltr" placeholder="09151234567">
                     <p x-show="errors.ownerMobile" x-text="errors.ownerMobile" class="text-red-500 text-xs mt-1"></p>
                 </div>
-
+                <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2">کلمه عبور : </label>
+    <input type="password" name="password" required class="w-full border rounded-lg p-2.5 focus:outline-none focus:border-primary">
+</div>
                 <div class="flex space-x-4 space-x-reverse">
                     <button type="button" @click="prevStep()" class="w-1/2 bg-gray-100 text-gray-700 py-2.5 rounded-lg font-bold hover:bg-gray-200 transition">قبلی</button>
                     <button type="submit" class="w-1/2 bg-accent text-white py-2.5 rounded-lg font-bold hover:bg-opacity-90 transition shadow-md">ثبت و ارسال درخواست</button>

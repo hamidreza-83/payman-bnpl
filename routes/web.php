@@ -17,6 +17,22 @@ Route::get('/businesses', function () {
 Route::get('/merchant/signup', function () {
     return view('pages.merchant-register');
 })->name('merchant.signup');
+
+
 /* POST */
 
 Route::post('/request-credit', [PageController::class, 'submitRequest'])->name('credit.request');
+
+
+/* merchmant */
+Route::post('/merchant/signup', [PageController::class, 'storeMerchant'])->name('merchant.store');
+
+Route::middleware(['auth'])->get('/merchant/dashboard', function () {
+    $transactions = [
+        ['id' => 'TX-1042', 'user' => 'حمیدرضا محمدی', 'amount' => '۴,۵۰۰,۰۰۰ تومان', 'status' => 'موفق', 'date' => '۱۴۰۵/۰۳/۲۴'],
+        ['id' => 'TX-1043', 'user' => 'سارا احمدی', 'amount' => '۱,۲۰۰,۰۰۰ تومان', 'status' => 'موفق', 'date' => '۱۴۰۵/۰۳/۲۴'],
+        ['id' => 'TX-1044', 'user' => 'علی علوی', 'amount' => '۸,۹۰۰,۰۰۰ تومان', 'status' => 'در انتظار تایید', 'date' => '۱۴۰۵/۰۳/۲۳'],
+    ];
+
+    return view('pages.merch_dashboard', compact('transactions'));
+})->name('merchant.dashboard');

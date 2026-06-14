@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Merchant;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class pageController extends Controller {
     public function home() {
@@ -56,5 +60,36 @@ class pageController extends Controller {
         ]);
 
         return redirect()->back()->with('success', 'درخواست شما ثبت شد. در اسرع وقت کارشناسان ما با شما تماس می‌گیرند.');
+    }
+    public function storeMerchant(Request $request) {
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:8',
+        'website' => 'required|string',
+        'biz_name' => 'required|string',
+        'biz_type' => 'required|string',
+        'biz_sales' => 'required|string',
+        'owner_phone' => 'required|string|digits:11',
+    ]);
+
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
+
+    Merchant::create([
+        'user_id' => $user->id,
+        'website' => $request->website,
+        'biz_name' => $request->biz_name,
+        'biz_type' => $request->biz_type,
+        'biz_sales' => $request->biz_sales,
+        'owner_phone' => $request->owner_phone,
+    ]);
+
+    Auth::login($user);
+
+    return redirect()->route('merchant.dashboard')->with('success', 'ثبت‌نام شما با موفقیت انجام شد و پنل تجاری فعال گردید.');
     }
 }
