@@ -25,6 +25,21 @@
    ```bash
    composer install
    ```
+   ```bash
+   cp .env.example .env
+   ```
+   ```bash
+   php artisan key:generate
+   ```
+   ```bash
+   touch database/database.sqlite
+   ```
+   ```bash
+   php artisan migrate
+   ```
+   ```bash
+   npm install
+   ```
 
 3. **اجرای سرور توسعه:**
    ```bash
