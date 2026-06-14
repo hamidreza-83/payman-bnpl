@@ -25,9 +25,29 @@
    ```bash
    composer install
    ```
+   ```bash
+   cp .env.example .env
+   ```
+   ```bash
+   php artisan key:generate
+   ```
+   ```bash
+   touch database/database.sqlite
+   ```
+   ```bash
+   php artisan migrate
+   ```
+   ```bash
+   npm install
+   ```
 
 3. **اجرای سرور توسعه:**
    ```bash
    php artisan serve
    ```
-   پروژه روی آدرس `http://127.0.0.1:8000` در دسترس خواهد بود.
+   پروژه روی آدرس `http://127.0.0.1:8000` در دسترس خواهد بود
+
+   یوزر تست که چند تراکنش وجود داره
+   ایمیل: jafar@gmail.com
+رمز عبور: jafar123456
+یا میتونید خودتون یه یوزر جدید ثبت نام کنید و ورود بزنید به داشبورد.
