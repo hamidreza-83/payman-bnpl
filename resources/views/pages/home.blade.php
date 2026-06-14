@@ -6,6 +6,9 @@
         <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">با «پی‌مان» بدون نیاز به ضامن و چک، خریدهای خود را امروز انجام دهید و هزینه آن را در ۴ ماه آینده با خیال راحت بپردازید.</p>
         
         <button onclick="openModal()" class="bg-accent hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full transition shadow-lg shadow-teal-500/20 request-credit">درخواست اعتبار</button>
+        <p class="text-sm text-gray-500 mt-4">
+             صاحب کسب‌وکار هستید؟ <a href="{{ route('merchant.signup') }}" class="text-accent font-bold hover:underline">درخواست درگاه پرداخت اقساطی (BNPL)</a>
+        </p>
     </div>
 
     <div class="mb-16 relative z-10">

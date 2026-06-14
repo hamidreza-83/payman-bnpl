@@ -36,3 +36,16 @@ Route::middleware(['auth'])->get('/merchant/dashboard', function () {
 
     return view('pages.merch_dashboard', compact('transactions'));
 })->name('merchant.dashboard');
+
+
+Route::get('/merchant/dashboard', [PageController::class, 'showDashboard'])
+     ->middleware('auth')
+     ->name('merchant.dashboard');
+
+    Route::get('/merchant/logout', function () {
+    Illuminate\Support\Facades\Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    
+    return redirect('/'); 
+})->name('logout');
