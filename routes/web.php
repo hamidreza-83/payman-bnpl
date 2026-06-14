@@ -53,7 +53,7 @@ Route::get('/merchant/dashboard', [PageController::class, 'showDashboard'])
 
 // login
 
-// روت نمایش صفحه ورود
 Route::get('/merchant/login', function() {
     return view('pages.merchant_login');
 })->name('merchant.login');
+Route::post('/merchant/login', [PageController::class, 'processLogin']);
