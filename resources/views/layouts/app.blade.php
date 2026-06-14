@@ -26,7 +26,16 @@
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 <body class="bg-light text-gray-800 flex flex-col min-h-screen">
-
+    <div class="bg-gray-100 border-b border-gray-200 py-1.5 text-xs font-medium text-gray-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-start space-x-4 space-x-reverse">
+        <a href="{{ url('/') }}" class="text-primary border-b-2 border-primary pb-0.5 font-bold">
+            برای خریداران (Shoppers)
+        </a>
+        <a href="{{ route('business.landing') }}" class="hover:text-primary transition-colors pb-0.5">
+            برای کسب‌وکارها (Businesses)
+        </a>
+    </div>
+    </div>
     <header class="bg-primary text-white shadow-md">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         
