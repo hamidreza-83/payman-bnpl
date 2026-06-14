@@ -13,6 +13,10 @@ Route::get('/contact', [PageController::class,'contact']) -> name('contact');
 Route::get('/businesses', function () {
     return view('pages.business'); 
 })->name('business.landing');
+
+Route::get('/merchant/signup', function () {
+    return view('pages.merchant-register');
+})->name('merchant.signup');
 /* POST */
 
 Route::post('/request-credit', [PageController::class, 'submitRequest'])->name('credit.request');

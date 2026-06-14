@@ -10,9 +10,9 @@
             به مشتریان خود اجازه دهید امروز بخرند و در ۴ قسط پرداخت کنند. شما کل مبلغ را فوراً و نقدی از ما تحویل بگیرید!
         </p>
         <div class="mt-8 flex justify-center space-x-4 space-x-reverse">
-            <a href="/register?type=merchant" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition">
-    شروع همکاری و دریافت API
-</a>
+            <a href="{{ route('merchant.signup') }}" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition">
+                 شروع همکاری و دریافت API
+            </a>
             <a href="#benefits" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
                 مزایای پی‌مان برای فروشگاه‌ها
             </a>
